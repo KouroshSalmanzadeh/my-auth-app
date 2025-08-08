@@ -1,0 +1,107 @@
+@reference "tailwindcss";
+@import "./theme.css";
+
+.dashboard {
+    @apply min-h-screen p-6 bg-primary/5;
+
+    .containerSection {
+        @apply max-w-[1200px] mx-auto;
+
+        .headerContent {
+            @apply flex items-center justify-between mb-6;
+
+            .headerTitle {
+                @apply text-3xl font-bold text-primary;
+            }
+
+            .headerSubtitle {
+                @apply text-sm opacity-70;
+            }
+        }
+
+        .gridSection {
+            @apply grid grid-cols-12 gap-6;
+
+            .rightSidebar {
+                @apply col-span-12 lg:col-span-4 space-y-4;
+                
+                .info {
+                    @apply flex flex-col gap-2 rounded-xl p-4 shadow bg-white/50;
+    
+                    .title {
+                        @apply font-semibold mb-3 text-primary;
+                    }
+    
+                    p {
+                        @apply text-sm;
+                    }
+                }
+            }
+
+            .mainContent {
+                @apply col-span-12 lg:col-span-8 space-y-4;
+
+                .stats {
+                    @apply grid grid-cols-1 sm:grid-cols-3 gap-4;
+                }
+
+                .panels {
+                    @apply flex flex-col gap-4;
+
+                    .quickPanel {
+                        @apply rounded-xl p-4 shadow flex flex-col bg-white/50;
+
+                        h4 {
+                            @apply font-semibold mb-3;
+                        }
+
+                        p {
+                            @apply text-sm mb-3;
+                        }
+
+                        .firstContainerPanel {
+                            @apply relative overflow-hidden rounded-lg p-4;
+                            background: linear-gradient(90deg, rgba(59,130,246,0.06), rgba(34,197,94,0.04));
+
+                            .lastContainerPanel {
+                                @apply p-3 rounded-lg bg-white/40 backdrop-blur-sm border border-white/40;
+
+                                h5 {
+                                    @apply font-bold;
+                                }
+
+                                p {
+                                    @apply text-xs opacity-70;
+                                }
+
+                                ul {
+                                    @apply mt-3 text-sm space-y-1;
+                                }
+
+                                .buttonContainer {
+                                    @apply mt-4 flex gap-2;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .otherInfoBox {
+                    @apply grid grid-cols-1 md:grid-cols-3 gap-4 [&>*]:bg-white/50;
+
+                    & > div {
+                        @apply rounded-xl p-4 shadow;
+
+                        h5 {
+                            @apply font-semibold;
+                        }
+
+                        p {
+                            @apply text-sm mt-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
